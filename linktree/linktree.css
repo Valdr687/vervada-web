@@ -1,0 +1,128 @@
+
+/*Profil*/
+.profil {
+    margin: 10px auto;
+    width: fit-content;
+}
+.icone {
+   width: 96px;
+   height: 96px; 
+   margin: 0 calc(50% - 48px);
+}
+.bio {
+    width: fit-content;
+    max-width: 60%;
+    margin: 0 auto;
+}
+/*Liens*/
+
+.liens {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.lien {
+    display: block;
+}
+.vignette {
+    display: grid;
+    width: 60%;
+    margin: 1em 20%;
+    border-radius: 25% 10%;
+    box-shadow: 20px 20px 50px #10101040;
+    border-radius: 15px;
+    border-top: 1px solid #e8f5f550;
+    border-left: 1px solid #e8f5f550;
+    background: #10101010;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    display: grid; 
+    grid-auto-rows: 100%; 
+    grid-template-columns: 30% 70%; 
+    gap: 0px 5px; 
+    height: 80px;
+    z-index: 2;
+    cursor: pointer;
+}
+.gauche { grid-area: 1 / 1 / 2 / 2;
+    place-items: center;
+    padding:24px 0;
+}
+.droite { grid-area: 1 / 2 / 2 / 3; 
+    place-items: center;
+    text-align: center;
+}
+.droite p {
+    position: absolute;
+    top: 10px;
+    margin: 5px;
+}
+.image {
+    width: 32px;
+    height: 32px;
+    margin: 24px auto;
+    position: absolute;
+    top: 50% ;
+    left: 10px;
+}
+/*Police, gestion des titres*/
+
+a:any-link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+p {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 14px;
+}
+h1 {
+	font-family: 'Almendra SC', serif;
+	font-size: 2em;
+    margin: 0 0.5em;
+}
+
+
+
+/*Structure basique*/
+footer {
+	text-align: center !important;
+	padding: 0px 5%;
+	width: 90%;
+	height: auto;
+	position: relative ;
+    margin: 5px 0px !important;
+}
+footer p {
+    margin: 0;
+}
+body {
+	background: rgb(46,226,255);
+    background: linear-gradient(180deg, rgba(46,226,255,1) 0%, rgba(18,53,98,1) 100%);
+	color: #e8f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0px auto;
+    min-height: calc(100vh - 38px);
+    width: fit-content;
+    max-width: 680px;
+    text-align: center !important;
+   
+}
+
+html {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    
+}
+
+
+
+
