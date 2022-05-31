@@ -1,6 +1,6 @@
-# Image and illustration are published under a specific licence 
+# Images and illustrations are published under a specific licence 
 
-Wihout further notificaion the image are published under the CC BY-NC-ND 4.0 licence. This licence is applied to all the files except if nother licence is used for the folder.
+Wihout further notificaion images are published under the CC BY-NC-ND 4.0 licence. This licence is applied to all the files except if another licence is used for the folder.
 
 # Licence 
 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License
