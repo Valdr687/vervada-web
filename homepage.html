@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <!-- CSS --> 
+       <link rel="stylesheet" type="text/css" href="./css/style_accueil.css" id="light" title="Light">
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+       <!-- Polices --> 
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+       <!-- Metadonnées -->
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="author" content="Valdr687" />
+       <title>The Vervada - Homepage</title>
+       <meta name="description" content="The official website of The Vervada made by Valdr687. Discover what's in the pack, how to use it and even more.">
+       <link rel="icon" href="./images/icones/vervada_trans.png" type="image/icon type">
+       <meta name="theme-color" content="rgb(189, 103, 32)"/>   
+</head>
+    <body>
+        <header>
+            <div class="logo" ><img src="./images/icones/vervada_fond.png" alt="logo"></div>
+            <nav> 
+              <div class="ham" >  
+                <span class="bar1"></span>  
+                <span class="bar2"></span>  
+                <span class="bar3"></span>  
+              </div>  
+              <ul class="nav-sub">  
+                <li class="list-item-active"><a href="./homepage.html" class="nav-link">Homepage</a></li>  
+                <li class="list-item"><a href="./showcase.html" class="nav-link">Showcase</a></li>  
+                <li class="list-item"><a href="./faq.html" class="nav-link">FAQ</a></li> 
+                <li class="list-item"><a href="./support.html" class="nav-link">Support</a></li>
+                <li class="list-item"><a href="https://www.planetminecraft.com/texture-pack/the-vervada/" class="nav-link">Download</a></li> 
+              </ul>
+            </nav> 
+            <!--Theme sombre-->
+            <div id="switch_theme" onclick="changeTheme();"><img id="moon_sun" src="./images/icones/dark_light/moon.png" alt="Change theme icon"></div>
+        </header>
+        <!-- Page -->
+        <main>
+          <article>
+            <h2>The  Vervada</h2>
+            <p>The Vervada is a vanilla friendly medieval texture pack for Minecraft ! The main idea behind the creation of <i>The Vervada</i> is to highlight the medieval fealing of the game, by making textures more rustic. But also by making the game more realistic ! <i>The Vervada</i> add a lots of variants and 3D models for a more immersive experience. </p>
+            <p>Not convince yet ? Here are a few screenshots of the pack :</p>
+          </article>
+          <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img src="./images/illustration/rainy_cave.png" style="width:100%">
+                <div class="text">Caption Text</div>
+              </div>
+
+              <div class="mySlides fade">
+                <img src="img2.jpg" style="width:100%">
+                <div class="text">Caption Two</div>
+              </div>
+
+              <div class="mySlides fade">
+                <img src="img3.jpg" style="width:100%">
+                <div class="text">Caption Three</div>
+              </div>
+            <div class="fleches">
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+            <div class="dots">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+          <article class="texte_centre">
+            <h2>Get The Vervada</h2>
+            <p>Join the <a target="blank" href="https://discord.gg/nj47MJgE" >discord</a></p>
+            <p>Download if for free on Planet Minecraft right <a target="blank" href="https://www.planetminecraft.com/texture-pack/the-vervada/" >here</p>
+          </article>
+          <article class="texte_centre">
+            <h2>Download The Vervada</h2>
+            <p>Enhance your game with our creation.</p>
+          </article>
+          <span class="barre"></span>
+          <article class="texte_centre">
+            <h3>How to use :</h3>
+                <p>Download the pack on Planet Minecraft.</p>
+                <p>Move zip folder to AppData\Roaming\.minecraft\resourcepacks</p>
+                <p>Load it from the Minecraft resource pack in the menu</p>             
+          </article>
+        </main>
+        <!--Bas de page-->
+        <footer>
+          <div class="bas_gauche">
+            <div class="haut">
+              <p>Website by <a target="blank" href="https://linktr.ee/Valdr687">Valdr687</a></p>
+            </div>
+            <div class="bas">
+              <p>This website is not affiliated with Mojang Studios ©</p>
+            </div>
+          </div>
+          <div class="bas_droite">
+            <div class="haut">
+              <p><a target="blank" href="mailto:">Contact</a></p>
+            </div>
+            <div class="bas">
+              <p><a target="blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">License</a></p>
+            </div>
+          </div>
+        </footer> 
+        <script src="./js/script.js"></script>
+        <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+          }
+        </script> 
+	</body>
+</html>
