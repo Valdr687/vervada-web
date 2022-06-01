@@ -120,7 +120,7 @@ main {
    
 }
 
-/* déclaration de base - filet de secours pr gérer les moindres détails*/
+/* déclaration de base - filet de secours pour gérer les moindres détails*/
 html {
     min-height: 100vh;
     width: 100%;
@@ -150,7 +150,7 @@ body {
 	color: #101010; /*texte sombre*/
 }
 header, .nav-sub {
-	background:  #ac541c; /* fond de l'entete et du menu de navigation ( pr mobile) orange (inexact mais il y a l'hexadecimal donc...) */
+	background:  #ac541c; /* fond de l'entete et du menu de navigation ( pour mobile) orange (inexact mais il y a l'hexadecimal donc...) */
 }
 footer {
 	background-color: #11111180; /*Fond noir transparent à 80%, ça donne du gris*/
@@ -211,5 +211,454 @@ h1, footer p , .prev,.next  {
 }
 .barre, .barre_petite {
 	background-color: #f4f4f4  ; /*barres de séparation blanches*/
+}
+```
+## Eléments généraux 
+
+- Style sur classe :
+```css
+body { /*déclarations générales*/
+	width:100%; 
+	min-height: 100vh;
+	margin: 0;
+}
+
+
+header { 
+	z-index: 100; /*header doit etre devant*/
+    height: 70px; /*hauteur de 70px*/
+    width: 100%; /*largeur de la page*/
+    position: fixed; /*fixé en haut*/
+    top: 0; left : 0 ;
+    
+
+}
+
+a:any-link { 
+	color: inherit;
+	text-decoration: none; /*pas de différence formelle avec du texte classique */
+}
+
+main { /*contient la page*/
+	position: relative; /*placé après l'entete*/
+	margin: 72px 80px 10px 80px; /*marge pour la lissiblité du contenu, modifiée par la suite avec des @media queries*/
+	padding: 20px; 
+	min-height: 100vh; /*occupé cette portion de l'écran fait que le footer sera en dessous quoi qu'il arrive*/
+}
+```
+## Style sur classe
+( classes bassiques uniquements )
+
+``` css
+.logo {
+	max-width: fit-content; /*mesure 32*32px*/
+	min-height: 32px; 
+	position: fixed; /*reste en haut*/
+	top: 5px; left : 50px ;
+}
+
+.texte_centre {
+	text-align: center; /*texte centré, je pense que c'est clair*/
+}
+
+/*Barres de séparation, liées à des <span class="barre">*/
+.barre {
+	display: block;
+	width:50%;  
+	height:3px;  
+	margin:5px auto;  
+}
+.barre_petite {
+	display: block;
+	width:20%;  
+	height:3px;  
+	margin:5px 0;  
+}
+```
+## Polices, gestion des titres
+
+```css
+p {
+	font-family: 'Quicksand', sans-serif; /*quicksand est utilisé pour le texte sinon c'est sans-serif*/
+	line-height: 1em;
+	font-size: 14px;
+}
+h1 {
+	font-family: 'Almendra SC', serif; /*Almendra SC est utilisé pour le texte sinon c'est serif*/
+	font-size: 50px;
+}
+
+h2 {
+	font-family: 'Almendra SC', serif;
+	font-size: 25px;
+
+}
+
+.faq h3 {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+}
+
+.faq p {
+	font-size: 14px;
+}
+
+article p {
+	font-size: 18px; /*police plus grande pour les articles*/
+}
+
+article a:any-link {
+	text-decoration: underline; /*liens soulignés dans les articles*/
+}
+```
+
+## Layout mobile 
+
+- Hamburger
+
+```css
+.ham{  
+	display:block;
+	position:absolute; /*placé en haut à droite*/
+	top:23px ; left: 5px;  
+	cursor: pointer;
+}
+
+/*anime les barres 1 et 3 pour faire une croix après un clic*/
+.change .bar1 {  
+   transform: rotate(45deg) translate(8px,3px);  
+}  
+.change .bar3 {  
+   transform: rotate(-45deg) translate(8px,-3px);  
+}
+/*bar2 est cachée après ce clic*/
+.change .bar2 {  
+   opacity: 0;  
+}  
+
+.bar1,.bar2,.bar3{  
+	display:block;  
+	width:35px;  
+	height:3px;  
+	margin:5px auto;   
+}
+```
+
+- Barre de navigation
+
+```css
+nav{  
+	display:flex;  
+	top:0;  
+	height:100%;  
+	justify-content:flex-start;  
+	align-items:center;   
+	padding:0px 20px;   
+}  
+  
+.nav-sub{  
+	display:flex;  
+	justify-content:flex-start;  /*début à gauche*/
+	height: 100%;
+	align-items:center;   
+}  
+.list-item {  
+	padding:10px;  
+	list-style:none;  /*pas de puce en debut de ligne*/
+}
+.list-item-active, .list-item:hover {  
+	text-decoration: underline; /*souligné qd actif ou au survol*/
+	padding:10px;
+	list-style:none;  
+}    
+.nav-link{  
+	color:inherit;   /*comme le texte*/
+	text-decoration:none;  
+}
+```   
+
+## Pied de page et icone de theme
+
+```css
+#switch_theme {
+	position: absolute; /*en haut à droite*/
+	right: 15px ; top :15px ;
+	width: 28px;
+	height: 28px;
+	border-radius: 8px;
+	padding: 8px 0 0 8px; /*permet de centrer l'image*/
+}
+```
+```css
+footer {
+	display: grid;
+	text-align: center !important;
+	grid-template-columns: 49% 49%;
+	grid-template-rows: min-content;
+	gap: 0px 2%;
+	grid-auto-flow: row;
+	justify-content: center;
+	grid-template-areas:
+	  "bas_gauche bas_droite";
+	padding: 0px 5%;
+	width: 90%;
+	height: auto;
+	position: relative ;	
+}
+
+
+.bas_gauche { grid-area: bas_gauche;
+	display: grid;
+	width: fit-content;
+	margin: 0 auto;
+	grid-template-columns: 100%;
+	grid-template-rows: min-content;
+	gap: 0px 0px;
+	gap : 5px ;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "haut"
+	  "bas";
+	grid-area: bas_gauche;
+}
+  
+.bas_droite {  display: grid;
+	width: fit-content;
+	margin: 0 auto;
+	grid-template-columns: 100%;
+	grid-template-rows: min-content;
+	gap: 0px 0px;
+	gap : 5px ;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "haut"
+	  "bas";
+	grid-area: bas_droite;
+}
+  
+  
+.haut { grid-area: haut; 
+}
+  
+  
+.bas { grid-area: bas; 
+}
+
+.haut, .bas {
+	width: 100%;
+	height: min-content;
+	text-align:center;
+}
+```
+## @media queries
+
+- Règles d'affichage basique ( margin / padding de ```<main>```)
+
+```css
+@media (min-width: 1200px) { /*ecran large de plus de 1200px*/
+	main {
+		margin: 72px 80px 10px 80px;
+		padding: 20px;
+	}
+}
+
+@media (min-width: 900px) { /*ecran large de plus de 900px*/
+	main {
+		margin: 72px 60px 10px 60px;
+		padding: 20px;
+	}
+}
+
+@media (max-width: 600px) { /*ecran large de moins de 600px*/
+	main {
+		margin: 72px 40px 10px 40px;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 500px) { /*ecran large de moins de 500px*/
+	main {
+		margin: 72px 30px 10px 30px;
+		padding: 10px;
+	}
+}
+
+@media (max-width: 400px) { /*ecran large de moins de 400px*/
+	main {
+		margin: 72px 20px 10px 20px;
+		padding: 5px;
+	}
+}
+```
+- Règles pour la gestion mobile / ordinateur
+
+```css
+
+@media (min-width: 900px) { /*Ecran de plus de 900px : ordinateur*/
+	.logo {
+		min-height: 32px;
+		position: fixed;
+		top: 5px; left : 5px ;
+	}
+	
+	.ham{  
+		display:none; /*hamburger caché*/
+	}  
+	 
+	.bar1,.bar2,.bar3{  
+		display:block;  
+		width:35px;  
+		height:3px;  
+		margin:5px auto;  
+		transition: 0.4s;  
+	}   
+}
+
+@media (max-width :900px ) { /*Ecran de moins de 900px : téléphone ou tablette verticale*/
+	.list-item {  
+		padding:10px;  
+		list-style:none;  
+	}  
+	.nav-link{  
+		color:inherit;  
+		text-decoration:none;  
+	}  
+	.nav-sub{  
+		visibility: hidden;
+		position:absolute;
+		padding: 0 10px;  
+		top:54px;  left:-6px;  
+		flex-direction:column;   
+		transition: transform 0.3s ease-in;  
+		transform:translate(100%);
+		height: 500em;  
+	}  
+	.nav-change{  
+		transform:translate(0%);  
+		visibility: visible;
+	} 
+}
+```
+
+## Diapositive : ```homepage.html```
+
+```css
+.slideshow-container {
+  	max-width: 80%;
+ 	position: relative;
+  	margin: auto;
+  	border-radius: 5px;
+	height: fit-content;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+	z-index: 1;
+	border-radius: 5px;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: -5px;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+	left: 5px;
+	border-radius: 3px 0 0 3px;
+}
+
+.text { /*texte affiché en haut à gauche de l'image*/
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+}
+
+
+.dots { /*conteneur de .dot*/
+	text-align: center;
+	position: absolute;
+	bottom: 15px ;
+	width: 100%;
+}
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	z-index: 2; /*devant l'image*/
+}
+```
+
+## Galerie : ```showcase.html```
+
+```css
+.container { 
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 1fr);
+	gap: 1em 1em;
+	grid-template-areas:
+	  	"ville"
+	  	"wood"
+		"flowers"
+	  	"house"
+		"axolotl";
+}
+  
+.wood { grid-area: wood; background-color: #216793;}
+  
+.flowers { grid-area: flowers; 	background-color: #93216d;}
+  
+.ville { grid-area: ville; background-color: #937421;}
+  
+.house { grid-area: house; background-color: #3b9321;}
+  
+.axolotl { grid-area: axolotl; background-color: #217893;}
+
+@media (min-width: 600px) {
+	.container { 
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1em 1em;
+		grid-template-areas:
+			"ville ville"
+			"wood flowers"
+			"house axolotl";
+	}
+}
+
+@media (min-width: 900px) {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1em 1em;
+		grid-template-areas:
+			"ville ville ville"
+			"wood wood flowers"
+			"house axolotl axolotl";
+	}
 }
 ```
