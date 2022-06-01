@@ -90,7 +90,7 @@ p {
 h1 {
 	font-family:  serif;
 	font-size: 2em;
-  margin: 0 0.5em;
+  	margin: 0 0.5em;
 }
 ```
 
@@ -105,7 +105,7 @@ footer {
 	width: 90%;
 	height: auto;
 	position: relative ;
-  margin: 5px 0px !important;
+  	margin: 5px 0px !important;
 }
 footer p {
     margin: 0; 
@@ -131,7 +131,7 @@ html {
 body {
   background: linear-gradient(180deg, rgba(46,226,255,1) 0%, rgba(18,53,98,1) 100%); /* dégradé*/
   background: rgb(46,226,255); /* si le dégradé plante coté client*/
-	color: #e8f5f5; /*couleur du texte - proche du blanc*/
+  color: #e8f5f5; /*couleur du texte - proche du blanc*/
   margin: 0;
   padding: 0;
 }
