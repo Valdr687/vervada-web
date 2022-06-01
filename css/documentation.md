@@ -5,7 +5,7 @@
 
 ```css
 .profil {
-    margin: 10px auto; // marge en haut de 10px - contenu centré
+    margin: 10px auto; /* marge en haut de 10px - contenu centré*/
     width: fit-content; // la div s'adapte au contenu
 }
 .icone {
