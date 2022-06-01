@@ -19,9 +19,9 @@
 ```
 
 ## Liens
-- ```html <div .liens>``` --> tous les liens 
-- <a .lien> --> lien unique vers un réseau social, élément parent de la div d'affichage <div .vignette>
-- <div .vignette> --> élément enfant ( petit fils de <div .liens> ) contenant l'icone et le texte représentatif du compte
+- ```<div .liens>``` --> tous les liens 
+- ```<a .lien>``` --> lien unique vers un réseau social, élément parent de la div d'affichage ```<div .vignette>```
+- ```<div .vignette>``` --> élément enfant ( petit fils de <div .liens> ) contenant l'icone et le texte représentatif du compte
 	
 ```css
 .liens { display: flex; /* design responsif*/
@@ -68,13 +68,16 @@
     top: 10px;
     margin: 5px;
 }
-.image { /*image en 32px format 1/1
+.image { /*image en 32px format 1/1*/
     width: 32px;
     height: 32px;
     margin: 24px auto; position: absolute; top: 50% ; left: 10px; /* permet de centrer */
 }
-/*Police, gestion des titres*/
+```
 
+## Police, gestion des titres
+
+```css
 a:any-link {
     text-decoration: inherit;
     color: inherit;
@@ -89,11 +92,13 @@ h1 {
 	font-size: 2em;
   margin: 0 0.5em;
 }
+```
 
+## Eléments généraux
 
+- le footer doit avoir une taille fixe : 100% de large et 38px de haut
 
-/*Structure basique*/
-/*footer doit avoir une taille fixe : 100% de large et 38px de haut*/
+```css
 footer {
 	text-align: center !important;
 	padding: 0px 5%;
