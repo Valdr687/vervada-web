@@ -21,7 +21,7 @@
 ## Liens
 - ```<div .liens>``` --> tous les liens 
 - ```<a .lien>``` --> lien unique vers un réseau social, élément parent de la div d'affichage ```<div .vignette>```
-- ```<div .vignette>``` --> élément enfant ( petit fils de ```<div .liens>``` ) contenant l'icone et le texte représentatif du compte
+- ```<div .vignette>``` --> élément enfant ( petit fils de <div .liens> ) contenant l'icone et le texte représentatif du compte
 	
 ```css
 .liens { display: flex; /* design responsif*/
@@ -90,7 +90,7 @@ p {
 h1 {
 	font-family:  serif;
 	font-size: 2em;
-  	margin: 0 0.5em;
+  margin: 0 0.5em;
 }
 ```
 
@@ -105,7 +105,7 @@ footer {
 	width: 90%;
 	height: auto;
 	position: relative ;
-  	margin: 5px 0px !important;
+  margin: 5px 0px !important;
 }
 footer p {
     margin: 0; 
@@ -131,8 +131,85 @@ html {
 body {
   background: linear-gradient(180deg, rgba(46,226,255,1) 0%, rgba(18,53,98,1) 100%); /* dégradé*/
   background: rgb(46,226,255); /* si le dégradé plante coté client*/
-  color: #e8f5f5; /*couleur du texte - proche du blanc*/
+	color: #e8f5f5; /*couleur du texte - proche du blanc*/
   margin: 0;
   padding: 0;
+}
+```
+
+# Style acceuil
+
+- L'unique différence entre "style_accueil.css" et "style_accueil_dark.css" est la couleur. Mais je pense que c'est évident.
+
+## Couleurs :
+
+* *Thème clair :*
+```css
+body {
+	background: #ccd3db; /*fond clair*/
+	color: #101010; /*texte sombre*/
+}
+header, .nav-sub {
+	background:  #ac541c; /* fond de l'entete et du menu de navigation ( pr mobile) orange (inexact mais il y a l'hexadecimal donc...) */
+}
+footer {
+	background-color: #11111180; /*Fond noir transparent à 80%, ça donne du gris*/
+}
+h1, .prev,.next {
+	color: #f4f4f4; /*titre et flèches du diapo noir*/
+}
+.bar1,.bar2,.bar3, .dot{  
+	background-color:#101010;  /*barres de l'hamburger et point du diapo noir*/
+}
+#switch_theme :hover {
+	background-color: #11111180; /*icone sombre au survol*/
+}
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8); /*boutons precedent et suivant sombres au survol*/
+}
+.active, .dot:hover {
+	background-color: #717171; /*point actif ou survolé gris sombre*/
+}
+.mySlides img {
+	border : 5px solid #101010; /*bordure des images du diapo noir et de 5px*/
+}
+.barre, .barre_petite {
+	background-color: #101010; /*barres de séparation noires*/
+}
+```
+
+* *Thème sombre : à ne pas confondre avec l'inverse du clair*
+
+```css
+body {
+	background: #2e2d26; /*fond de la page noir*/
+	color: #e8f5f1; /*texte blanc*/
+}
+header, .nav-sub {
+	background:  #59402d ; /*en gros c'est orange*/
+}
+footer {
+	background-color: #433c3c; /*fond gris sombre*/
+}
+h1, footer p , .prev,.next  {
+	color: #f4f4f4; /*titre et flèches du diapo blancs*/
+}
+.bar1,.bar2,.bar3, .dot{  
+	background-color:#101010; /*barres de l'hamburger et point du diapo noir*/
+}
+#switch_theme :hover {
+	background-color: #11111180;  /*icone sombre au survol*/
+}
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);  /*boutons precedent et suivant sombres au survol*/
+}
+.active, .dot:hover {
+	background-color: #717171; /*point actif ou survolé gris sombre*/
+}
+.mySlides img {
+	border : 5px solid #101010; /*bordure des images du diapo noir et de 5px*/
+}
+.barre, .barre_petite {
+	background-color: #f4f4f4  ; /*barres de séparation blanches*/
 }
 ```
