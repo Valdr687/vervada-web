@@ -540,7 +540,7 @@ footer {
 }
 ```
 
-## Diapositive : ```homepage.html```
+## Diapositive : ```index.html```
 
 ```css
 .slideshow-container {
