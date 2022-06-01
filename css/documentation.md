@@ -1,5 +1,5 @@
 # How this css does works ?
-- I will try to answer to you or the future myself, please than most of this will be written in french.
+- I will try to answer to you or the future myself, please note than most of this will be written in french.
 
 # Linktree.css
 
