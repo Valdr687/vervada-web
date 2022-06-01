@@ -20,8 +20,8 @@
 
 ## Liens
 - <div .liens> --> tous les liens 
-  - <a .lien> --> lien unique vers un réseau social, élément parent de la div d'affichage <div .vignette>
-    - <div .vignette> --> élément enfant ( petit fils de <div .liens> ) contenant l'icone et le texte représentatif du compte
+	- <a .lien> --> lien unique vers un réseau social, élément parent de la div d'affichage <div .vignette>
+ 		- <div .vignette> --> élément enfant ( petit fils de <div .liens> ) contenant l'icone et le texte représentatif du compte
 	
 ```css
 .liens { display: flex; /* design responsif*/
