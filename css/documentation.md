@@ -494,7 +494,7 @@ footer {
 
 ```css
 
-@media (min-width: 900px) { /*Ecran de plus de 900px : ordinateur*/
+@media (min-width: 768px) { /*Ecran de plus de 768px : ordinateur*/
 	.logo {
 		min-height: 32px;
 		position: fixed;
@@ -514,7 +514,7 @@ footer {
 	}   
 }
 
-@media (max-width :900px ) { /*Ecran de moins de 900px : téléphone ou tablette verticale*/
+@media (max-width :767px ) { /*Ecran de moins de 768px : téléphone ou tablette verticale*/
 	.list-item {  
 		padding:10px;  
 		list-style:none;  
