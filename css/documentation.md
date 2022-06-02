@@ -490,7 +490,7 @@ footer {
 	}
 }
 ```
-- Règles pour la gestion mobile / ordinateur
+- Règles pour le passage mobile / ordinateur
 
 ```css
 
