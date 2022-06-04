@@ -1,5 +1,5 @@
 # Vervada
-My website made for my texture pack, also include my linktree and other stuff.
+The website made for The Vervada, a medieval minecraft texture pack.
 
 
 
