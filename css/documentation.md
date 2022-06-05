@@ -455,38 +455,59 @@ footer {
 - Règles d'affichage basique ( margin / padding de ```<main>```)
 
 ```css
-@media (min-width: 1200px) { /*ecran large de plus de 1200px*/
+@media (min-width: 2560px) { /*4K*/
 	main {
-		margin: 72px 80px 10px 80px;
-		padding: 20px;
+		margin: 72px 10vw 10px 10vw;
+		padding: 2vh 20px;
+	}
+	p {
+		font-size: 20px !important;
+	}
+	h2 {
+		margin-top: 1em;
+		padding-top: 1em ;
 	}
 }
 
-@media (min-width: 900px) { /*ecran large de plus de 900px*/
+@media (min-width: 1440px) and (max-width: 2560px) { /*ordinteur portable L*/
+	main {
+		margin: 72px 10vw 10px 10vw;
+		padding: 0 20px;
+	}
+}
+
+@media (min-width: 1024px) { /*ordinteur portable*/
 	main {
 		margin: 72px 60px 10px 60px;
-		padding: 20px;
+		padding: 0 20px;
 	}
 }
 
-@media (max-width: 600px) { /*ecran large de moins de 600px*/
+@media (max-width: 600px) {
 	main {
 		margin: 72px 40px 10px 40px;
-		padding: 10px;
+		padding: 0 10px;
 	}
-}
 
-@media (max-width: 500px) { /*ecran large de moins de 500px*/
+}
+@media (max-width: 500px) {
 	main {
 		margin: 72px 30px 10px 30px;
-		padding: 10px;
+		padding: 0 10px;
 	}
 }
 
-@media (max-width: 400px) { /*ecran large de moins de 400px*/
+@media (max-width: 400px) {
 	main {
 		margin: 72px 20px 10px 20px;
-		padding: 5px;
+		padding: 0 5px;
+	}
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+	main {
+		margin: 72px 20px 10px 20px;
+		padding: 0 5px;
 	}
 }
 ```
@@ -531,7 +552,7 @@ footer {
 		flex-direction:column;   
 		transition: transform 0.3s ease-in;  
 		transform:translate(100%);
-		height: 500em;  
+		height: 100vh;  
 	}  
 	.nav-change{  
 		transform:translate(0%);  
