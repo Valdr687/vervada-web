@@ -1,6 +1,4 @@
-The website made for The Vervada, a medieval minecraft texture pack.
-
-# Documentation
+- Website made for The Vervada, a medieval minecraft texture pack.
 
 - What's inside pages ?
   - index.html : homepage
