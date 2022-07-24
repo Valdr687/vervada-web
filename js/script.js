@@ -24,11 +24,12 @@ function changeTheme() {
 const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 if(userPrefersDark){
-  
-  theme="dark" ;
+  theme="light" ;
+  changeTheme()
 }
 else {
-  theme="light";
+  theme="dark";
+  changeTheme()
 }
 
 const hamburger = document.querySelector(".ham");  
