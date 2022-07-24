@@ -212,6 +212,7 @@ footer {
 	width: 90%;
 	height: auto;
 	position: relative ;	
+	margin-top: 1.5em;
 }
 
 
@@ -262,69 +263,56 @@ footer {
 
 
 /*-------------------------------Fin du style par défaut--------------------------------------------------------------------------------------*/
-/*Galerie*/
-.container { 
-	display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(5, 1fr);
-		gap: 1em 1em;
-		grid-template-areas:
-	  		"ville"
-	  		"wood"
-			"flowers"
-	  		"house"
-			"axolotl";
-}
-  
-.wood { grid-area: wood; 
-background-color: #216793;}
-  
-.flowers { grid-area: flowers; 
-	background-color: #93216d;}
-  
-.ville { grid-area: ville; background-color: #937421;}
-  
-.house { grid-area: house; background-color: #3b9321;}
-  
-.axolotl { grid-area: axolotl; background-color: #217893;}
-
-/*@media : grille*/
-@media (min-width: 600px) {
-	.container { 
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		gap: 1em 1em;
-		grid-template-areas:
-			"ville ville"
-			"wood flowers"
-			"house axolotl";
-	}
+.galerie {  display: grid;
+	grid-template-columns: 33% 34% 33%;
+	grid-template-rows: min-content;
+	gap: 5px 5px;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "gauche_grd gauche_grd droite_petit"
+	  "gauche_petit droite_grd droite_grd";
+	margin-bottom: 5px;
+	padding-top: 5px;
+	width: calc(100% - 10px);
 }
 
-@media (min-width: 900px) {
-	.container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		gap: 1em 1em;
-		grid-template-areas:
-			"ville ville ville"
-			"wood wood flowers"
-			"house axolotl axolotl";
-	}
+.gauche_grd { grid-area: gauche_grd; } 
+.droite_petit { grid-area: droite_petit; } 
+.droite_grd { grid-area: droite_grd; }
+.gauche_petit { grid-area: gauche_petit; }
+
+.galerie img {
+	width: 100% ;
+	height: auto;
+}
+.gauche_petit , .droite_petit {
+	display:flex;  
+	align-items:center;   
+	justify-content: space-between;
+	flex-direction: column;
+	padding-bottom: 4px;
+}
+.gauche_petit , .droite_petit {
+	font-size: 80%;
+}
+.galerie h2 {
+	text-align: center;
+	padding-top: 0;
 }
 /*------------------------------------------------Slideshow container */
 .slideshow-container {
   	max-width: 100%;
  	position: relative;
-  	margin: 0 20px;
+	width: fit-content;
+  	margin: 0 auto;
   	border-radius: 5px;
-	height: fit-content;
+	height: min-content;
+	color: #101010;
 }
 
 .mySlides {
   display: none;
-
+  font-family: 'Almendra SC', serif;
 }
 .mySlides img {
 	z-index: 1;
@@ -359,7 +347,7 @@ background-color: #216793;}
 	padding: 8px 12px;
 	position: absolute;
 	top: 10px;
-	left: 10px;
+	right: 10px;
 	text-align: center;
 }
 
@@ -412,8 +400,22 @@ background-color: #216793;}
 		color:inherit;  
 		text-decoration:none;  
 	}  
-	  
-	  
+	.galerie {  display: grid;
+		grid-template-columns: 100%;
+		gap: 5px 5px;
+		grid-template-rows: min-content min-content;
+		grid-template-areas:
+		  "gauche_grd"
+		  "droite_petit"
+		  "droite_grd"
+		  "gauche_petit";
+		margin-bottom: 5px;
+		padding-top: 10px;
+	}
+	.gauche_petit, .droite_petit {
+		height: calc(100% + 5px);
+	}  
+		  
 	.nav-sub{  
 		visibility: hidden;
 		position:absolute;
