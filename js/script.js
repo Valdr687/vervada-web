@@ -1,43 +1,52 @@
-//Déclaration des variables
-var theme ;
-    
-//Fonctions
-function changeTheme() {
-  if ( theme == "light" ) {
-    var element = document.body;
-    element.classList.toggle("dark");
-    image = document.getElementById('moon_sun');
-    image.src = "./images/icones/dark_light/sun.png";
-    theme="dark" ;
-  }
-  else { 
-    var element = document.body;
-    element.classList.toggle("dark");
-    image = document.getElementById('moon_sun');
-    image.src = "./images/icones/dark_light/moon.png";
-    theme="light";
-  }	
-  return theme
+//Variables
+NombreImage = 7;
+ConfigImage = [];
+AltImage = {
+  '1': "Some blocks using custom models : fletching tower, crafting table, chest, end portal and more. ",
+  '2': "Main presentation of the Vervada, depicting a medieval village with a river.",
+  '3': "All the pieces of wood, including bushy leaves, 3D door and trapdoors and custom textures.",
+  '4': "Hobbit village built with The Vervada",
+  '5': "Rails and tnt minecart, rails have 3D models.",
+  '6': "Enchanting table surrounded by bookshelves with a torch and a flower in a pot.",
+  '7': "A cave with ores and a torch, ores and the torch have 3D models."
+};
+
+// Carousel
+for (let i = 0; i < NombreImage; i++) {
+  ConfigImage.push(i + 1)
 }
 
-//Script
-const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-if(userPrefersDark){
-  theme="light" ;
-  changeTheme()
-}
-else {
-  theme="dark";
-  changeTheme()
+function arrayRotate(arr, reverse) {
+  if (reverse) arr.unshift(arr.pop());
+  else arr.push(arr.shift());
+  return arr;
 }
 
-const hamburger = document.querySelector(".ham");  
-const navsub = document.querySelector(".nav-sub");  
-hamburger.addEventListener('click', () => {  
- hamburger.classList.toggle("change")  
- navsub.classList.toggle("nav-change")  
+function agencement(tab, alt) {
+  $("#img1").attr("src", "./images/illustration/" + tab[0] + ".png");
+  $("#img1").attr("alt", alt[tab[0]]);
+  $("#img2").attr("src", "./images/illustration/" + tab[1] + ".png");
+  $("#img2").attr("alt", alt[tab[1]]);
+  $("#img3").attr("src", "./images/illustration/" + tab[2] + ".png");
+}
+
+$(document).ready(function () {
+  $(".next").click(function () {
+    ConfigImage = arrayRotate(ConfigImage)
+    agencement(ConfigImage, AltImage)
+  });
+});
+
+$(document).ready(function () {
+  $(".prev").click(function () {
+    ConfigImage = arrayRotate(ConfigImage, true)
+    agencement(ConfigImage, AltImage)
+  });
+});
+
+//Menu
+$(document).ready(function () {
+  $("#ham-btn").click(function () {
+    $('header').toggleClass("open");
+  });
 }); 
-  
-
-
