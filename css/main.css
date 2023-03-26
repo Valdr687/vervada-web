@@ -124,12 +124,8 @@ picture {
 }
 
 .menu-item {
-    float: right;
-
-}
-
-.top {
     float: left;
+
 }
 
 .menu-item a {
