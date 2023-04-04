@@ -28,6 +28,7 @@ function agencement(tab, alt) {
   $("#img2").attr("src", "./images/illustration/" + tab[1] + ".png");
   $("#img2").attr("alt", alt[tab[1]]);
   $("#img3").attr("src", "./images/illustration/" + tab[2] + ".png");
+  $("#img3").attr("alt", alt[tab[2]]);
 }
 
 $(document).ready(function () {

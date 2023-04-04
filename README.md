@@ -6,7 +6,6 @@ The Vervada is a ressource pack made for Minecraft Java Edition who brings a med
 
 - index.html : Homepage
 - showcase.html : more images of what my texture pack do
-- support.html : how can people support my pack
 - faq.html : some questions and answer related to the pack
 
 ### Creative Commons License  
